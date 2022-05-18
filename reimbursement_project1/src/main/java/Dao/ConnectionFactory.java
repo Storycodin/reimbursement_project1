@@ -5,11 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
-
 	
-	private static String url = "jdbc:postgresql://datachan.ctfk86dmi2gc.us-west-1.rds.amazonaws.com:5432/p1reimburs";
-	private static String username = "DataChan";
-	private static String password = "p4ssw0rd";
+	private static String url = "jdbc:postgresql://${datachanUsername}/p1reimburs";
+	private static String username = ${datachanUsername};
+	private static String password = ${datachanPassword}";
 	
 	public static Connection getConnection() throws SQLException {
 		return DriverManager.getConnection(url, username, password);
